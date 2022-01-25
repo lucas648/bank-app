@@ -37,4 +37,11 @@ describe('InputComponent', () => {
     const elementValue = fixture.debugElement.query(By.css('#inputLabel'))
     expect((elementValue.nativeElement as HTMLLabelElement).innerText).toEqual('Name')
   });
+
+  it('should emit event text', () =>{
+    component.inputValue = 'Lucas Costa'
+    spyOn(component.inputTextEmitter, 'emit')
+    component.emitText();
+    expect(component.inputTextEmitter.emit).toHaveBeenCalledWith('Lucas Costa')
+  })
 });
