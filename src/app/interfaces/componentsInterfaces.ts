@@ -3,3 +3,9 @@ export interface ButtonItem {
   innerText?: string;
   source?: string;
 }
+
+export interface goToItem {
+  title?: string;
+  text?: string;
+  route?: string;
+}

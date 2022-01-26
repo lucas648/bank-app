@@ -9,6 +9,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ButtonCarrouselComponent } from './components/button-carrousel/button-carrousel.component';
+import { GoToComponent } from './components/go-to/go-to.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ButtonCarrouselComponent } from './components/button-carrousel/button-c
     CarouselComponent,
     LoginComponent,
     HomeComponent,
-    ButtonCarrouselComponent
+    ButtonCarrouselComponent,
+    GoToComponent
   ],
   imports: [
     BrowserModule,
