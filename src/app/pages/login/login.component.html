@@ -1,1 +1,21 @@
-<p>login works!</p>
+<form    
+ [formGroup]="formLogin"
+ (ngSubmit)="doLogin()">
+  <div>
+    <label>Login</label>
+    <input 
+      id="login" 
+      formControlName="login" 
+      placeholder="Login"
+    />
+  </div>
+  <div>
+    <label>Password</label>
+    <input 
+      id="password" 
+      formControlName="password" 
+      placeholder="Password"
+    />
+  </div>
+  <button type="submit"></button>
+</form>
