@@ -1,5 +1,7 @@
+import { login } from './../../interfaces/componentsInterfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,11 @@ export class LoginComponent implements OnInit {
 
   public formLogin: FormGroup;
 
+  isValid: boolean = false;
+
   constructor(
-    private builder: FormBuilder
+    private builder: FormBuilder,
+    private route: Router
   ) { 
     this.formLogin = this.criarFormulario()
   }
@@ -21,12 +26,28 @@ export class LoginComponent implements OnInit {
 
   criarFormulario(): FormGroup{
     return this.builder.group({
-      login: [,Validators.required],
-      password: [,Validators.required]
+      login: ['',Validators.required],
+      password: ['',Validators.required]
     })
   }
 
   doLogin(){
-    return
+    this.verificarCampos();
+    
+    return this.isValid;
   }
+
+  verificarCampos(){
+    const loginData: login = {
+      login: this.formLogin.get('login')?.value,
+      password: this.formLogin.get('password')?.value
+    }
+
+    loginData.login === 'LucasCosta' && loginData.password === 'Luc@sCosta' ? this.isValid = true : this.isValid = false;
+  }
+
+  trocarSenha(){
+    this.route.navigate([])
+  }
+
 }

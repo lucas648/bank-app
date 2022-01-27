@@ -9,3 +9,8 @@ export interface goToItem {
   text?: string;
   route?: string;
 }
+
+export interface login {
+  login: string;
+  password: string;
+}

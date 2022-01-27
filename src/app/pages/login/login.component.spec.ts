@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { LoginComponent } from './login.component';
 
@@ -9,7 +10,8 @@ describe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      declarations: [ LoginComponent ],
+      imports: [FormsModule, ReactiveFormsModule,AppRoutingModule]
     })
     .compileComponents();
   });
@@ -18,10 +20,6 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    component.formLogin.patchValue({
-      login: 'LucasCosta',
-      password: 'Luc@sCosta'
-    })
   });
 
   it('should create', () => {
@@ -29,20 +27,26 @@ describe('LoginComponent', () => {
   });
 
   it('should recieve login value', ()=>{
-    component.formLogin.patchValue({
-      login: 'LucasCosta',
-      password: 'Luc@sCosta'
-    })
-    const elementValue = fixture.debugElement.query(By.css('#login'));
-    expect((elementValue.nativeElement as HTMLInputElement).innerText).toEqual('LucasCosta');
+    const inputValue: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#login')
+    inputValue.value = 'LucasCosta';
+    inputValue.dispatchEvent(new Event('input'))
+    expect(component.formLogin.get('login')?.value).toEqual(inputValue.value);
   });
 
   it('should recieve password value', ()=>{
-    const elementValue = fixture.debugElement.query(By.css('#password'));
-    expect((elementValue.nativeElement as HTMLInputElement).innerText).toEqual('Luc@sCosta');
+    const inputValue: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#password')
+    inputValue.value = 'Luc@sCosta';
+    inputValue.dispatchEvent(new Event('input'))
+    expect(component.formLogin.get('password')?.value).toEqual(inputValue.value);
   });
 
   it('should do the login', ()=>{
+    const loginValue: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#login')
+    loginValue.value = 'LucasCosta';
+    const passwordValue: HTMLInputElement = fixture.debugElement.nativeElement.querySelector('#password')
+    passwordValue.value = 'Luc@sCosta';
+    loginValue.dispatchEvent(new Event('input'))
+    passwordValue.dispatchEvent(new Event('input'))
     component.doLogin();
     expect(component.doLogin()).toBeTrue()
   });
