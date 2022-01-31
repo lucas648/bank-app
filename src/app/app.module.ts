@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ButtonCarrouselComponent } from './components/button-carrousel/button-carrousel.component';
 import { GoToComponent } from './components/go-to/go-to.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     HomeComponent,
     ButtonCarrouselComponent,
-    GoToComponent
+    GoToComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
