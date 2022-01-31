@@ -2,7 +2,7 @@ import { ButtonItem } from './../../interfaces/componentsInterfaces';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-button-carrousel',
+  selector: 'button-carrousel',
   templateUrl: './button-carrousel.component.html',
   styleUrls: ['./button-carrousel.component.scss']
 })

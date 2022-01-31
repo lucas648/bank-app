@@ -2,7 +2,7 @@ import { goToItem } from './../../interfaces/componentsInterfaces';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-go-to',
+  selector: 'go-to',
   templateUrl: './go-to.component.html',
   styleUrls: ['./go-to.component.scss']
 })
