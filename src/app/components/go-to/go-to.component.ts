@@ -8,11 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class GoToComponent implements OnInit {
 
-  @Input() item: goToItem = {
-    title: '',
-    text: '',
-    route: ''
-  };
+  @Input() items: goToItem[] = [];
   @Output() goToEmitter: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -20,8 +16,8 @@ export class GoToComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  emitRoute(){
-    this.goToEmitter.emit(this.item.route)
+  emitRoute(item: goToItem){
+    this.goToEmitter.emit(item.route)
   }
 
 }
