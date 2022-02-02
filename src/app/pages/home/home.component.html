@@ -1,16 +1,24 @@
 <div>
   <div>
     <p>Banco</p>
-    <button></button>
+    <p>Bem vindo {{user.firstName}}!!!</p>
   </div>
   <div>
     <div>
-      <img>
-      <p></p>
+      <p>Veja seu saldo aqui</p>
+      <input 
+        [type]="balanceInputType"  
+        [value]="user.balance"
+      />
+      <button (click)="mostrarSaldo()">Mostrar Saldo</button>
     </div>
     <div>
-      <button-carrousel></button-carrousel>
-      <go-to></go-to>
+      <button-carrousel
+        [items]="buttonCarrouselItem"
+      ></button-carrousel>
+      <go-to
+        [items]="gotoItem"
+      ></go-to>
     </div>
   </div>
 </div>
