@@ -1,7 +1,18 @@
-<div>
-  <button click="eventEmiter()">
-    <img id="buttonImage" src="item.source">
-    <p id="buttonText" >{{item.innerText}}</p>
+<div *ngFor="let item of items">
+  <button click="eventEmiter(item)">
+    <img 
+      *ngIf="item.source" 
+      id="buttonImage" 
+      src="item.source"
+    />
+    <p id="buttonText" >
+      {{item.innerText}}
+    </p>
   </button>
-  <p id="buttonTitle">{{item.title}}</p>
+  <p 
+    *ngIf="item.title" 
+    id="buttonTitle"
+  >
+    {{item.title}}
+  </p>
 </div>

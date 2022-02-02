@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ButtonCarrouselComponent implements OnInit {
 
-  @Input() item: ButtonItem = {};
+  @Input() items: ButtonItem[] = [];
   @Output() buttonEmitter: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -16,7 +16,7 @@ export class ButtonCarrouselComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  eventEmiter(){
-    this.buttonEmitter.emit(this.item)
+  eventEmiter(item: ButtonItem){
+    this.buttonEmitter.emit(item)
   }
 }
