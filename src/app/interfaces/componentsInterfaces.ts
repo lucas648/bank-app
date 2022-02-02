@@ -2,6 +2,7 @@ export interface ButtonItem {
   title?: string;
   innerText?: string;
   source?: string;
+  route?: string;
 }
 
 export interface goToItem {
