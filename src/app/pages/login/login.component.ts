@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { login } from './../../interfaces/componentsInterfaces';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private builder: FormBuilder,
-    private route: Router
+    private route: Router,
+    private auth: AuthService
   ) { 
     this.formLogin = this.criarFormulario()
   }
@@ -32,18 +34,16 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin(){
-    this.verificarCampos();
+    const loginData = this.verificarCampos();
     
-    return this.isValid;
+    return this.auth.authanticate(loginData);
   }
 
   verificarCampos(){
-    const loginData: login = {
+    return  {
       login: this.formLogin.get('login')?.value,
       password: this.formLogin.get('password')?.value
     }
-
-    loginData.login === 'LucasCosta' && loginData.password === 'Luc@sCosta' ? this.isValid = true : this.isValid = false;
   }
 
   trocarSenha(){

@@ -12,16 +12,8 @@ import { ButtonCarrouselComponent } from './components/button-carrousel/button-c
 import { GoToComponent } from './components/go-to/go-to.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
-import { RecargasComponent } from './pages/recargas/recargas.component';
 import { PixComponent } from './pages/pix/pix.component';
-import { ExtratoComponent } from './pages/extrato/extrato.component';
-import { PagamentosComponent } from './pages/pagamentos/pagamentos.component';
-import { BeneficiosComponent } from './pages/beneficios/beneficios.component';
 import { OpenFinanceComponent } from './pages/open-finance/open-finance.component';
-import { InvestimentosComponent } from './pages/investimentos/investimentos.component';
-import { EmprestimosComponent } from './pages/emprestimos/emprestimos.component';
-import { CartoesComponent } from './pages/cartoes/cartoes.component';
-import { LojaComponent } from './pages/loja/loja.component';
 import { CardsComponent } from './pages/cards/cards.component';
 import { MarketplaceComponent } from './pages/marketplace/marketplace.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
@@ -30,6 +22,7 @@ import { RechargeComponent } from './pages/recharge/recharge.component';
 import { BalanceComponent } from './pages/balance/balance.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { BenefitsComponent } from './pages/benefits/benefits.component';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -42,16 +35,8 @@ import { BenefitsComponent } from './pages/benefits/benefits.component';
     ButtonCarrouselComponent,
     GoToComponent,
     ForgetPasswordComponent,
-    RecargasComponent,
     PixComponent,
-    ExtratoComponent,
-    PagamentosComponent,
-    BeneficiosComponent,
     OpenFinanceComponent,
-    InvestimentosComponent,
-    EmprestimosComponent,
-    CartoesComponent,
-    LojaComponent,
     CardsComponent,
     MarketplaceComponent,
     InvestmentsComponent,
@@ -66,7 +51,7 @@ import { BenefitsComponent } from './pages/benefits/benefits.component';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
