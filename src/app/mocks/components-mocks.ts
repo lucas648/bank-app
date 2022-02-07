@@ -39,7 +39,7 @@ export const carrousselButtonContent : ButtonItem [] = [
   },
   {
     innerText: 'Extrato',
-    route: 'extrato'
+    route: 'balance'
   },
   {
     innerText: 'Pagamentos',
@@ -56,3 +56,41 @@ export const userData = {
   firstName: 'Eduardo',
   balance: '15000'
 }
+
+export const userBalance = [
+  {
+    value: 'R$ 15,00',
+    type: 'Transporte',
+    date: '06/02/2022'
+  },
+  {
+    value: 'R$ 45,00',
+    type: 'Bebida',
+    date: '06/02/2022'
+  },  
+  {
+    value: 'R$ 34,00',
+    type: 'Restaurante',
+    date: '06/02/2022'
+  }, 
+  {
+    value: 'R$ 5,00',
+    type: 'Utilidades',
+    date: '05/02/2022'
+  },
+  {
+    value: 'R$ 95,00',
+    type: 'Educação',
+    date: '05/02/2022'
+  },
+  {
+    value: 'R$ 15,00',
+    type: 'Farmácia',
+    date: '04/02/2022'
+  },
+  {
+    value: 'R$ 65,00',
+    type: 'Transferência PIX',
+    date: '03/02/2022'
+  },
+]

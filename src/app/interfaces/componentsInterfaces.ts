@@ -15,3 +15,9 @@ export interface login {
   login: string;
   password: string;
 }
+
+export interface balance {
+  value: string;
+  type: string;
+  date: string
+}
