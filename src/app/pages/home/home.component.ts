@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { goToItem, ButtonItem } from './../../interfaces/componentsInterfaces';
 import { gotoContent, carrousselButtonContent, userData } from './../../mocks/components-mocks';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,9 @@ export class HomeComponent implements OnInit {
   balanceInputType = 'password'
   user = userData
 
-  constructor() { }
+  constructor(
+    private route : Router
+  ) { }
 
   ngOnInit(): void {
   }
@@ -23,4 +26,8 @@ export class HomeComponent implements OnInit {
     this.balanceInputType === 'password' ? this.balanceInputType = 'text' : null;
   }
 
+  navigateTo(recievedRoute: string){-
+    3
+    this.route.navigate([recievedRoute])
+  }
 }
