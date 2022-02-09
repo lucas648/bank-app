@@ -1,0 +1,36 @@
+<div>
+  <div>
+      Insira seus dados
+  </div>
+  <div>
+    <form [formGroup]="registerForm" (ngSubmit)="sendData()">
+      <div>
+        <label>Nome</label>
+        <input formControlName="name"/>
+        <div>Digite seu nome</div>
+      </div>
+      <div>
+        <label>Data de Nascimento</label>
+        <input formControlName="birthDate" type="date"/>
+        <div>Insira sua data de Nascimento</div>
+      </div>
+      <div>
+        <label>CPF</label>
+        <input formControlName="cpf" />
+        <div>Insira um CPF válido</div>
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input type="email" formControlName="email" />
+        <div>Insira um e-mail válido</div>
+      </div>
+      <div>
+        <label>Telefone</label>
+        <input formControlName="phoneNumber" />
+        <div>Insira seu telefone</div>
+      </div>
+
+      <button>Enviar</button>
+    </form>
+  </div>
+</div>

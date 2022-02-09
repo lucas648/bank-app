@@ -23,6 +23,7 @@ import { BalanceComponent } from './pages/balance/balance.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { BenefitsComponent } from './pages/benefits/benefits.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AuthGuard } from './guards/auth.guard';
     RechargeComponent,
     BalanceComponent,
     PaymentsComponent,
-    BenefitsComponent
+    BenefitsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
