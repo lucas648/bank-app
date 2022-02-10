@@ -1,12 +1,14 @@
-<div>
-  <div>
+<div class="home">
+  <div class="home__inicio">
     <p>Banco</p>
-    <p>Bem vindo {{user.firstName}}!!!</p>
+    <p>Olá, {{user.firstName}}!!!</p>
   </div>
   <div>
     <div>
       <p>Veja seu saldo aqui</p>
+      <label *ngIf="balanceInputType === 'text'" >R$</label>
       <input 
+        class="home__saldo"
         [type]="balanceInputType"  
         [value]="user.balance"
       />
@@ -17,7 +19,7 @@
         [items]="buttonCarrouselItem"
       ></button-carrousel>
       <go-to
-        [items]="gotoItem"
+        [items]="goToItem"
         (goToEmitter)="navigateTo($event)"
       ></go-to>
     </div>

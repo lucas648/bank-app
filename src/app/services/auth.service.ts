@@ -13,6 +13,7 @@ export class AuthService {
   authanticate(loginData: login): boolean{
     loginData.login === 'LucasCosta' && loginData.password === 'Luc@sCosta' ? this.isUserValid = true : this.isUserValid = false;
 
+    console.log(this.isUserValid)
     return this.isUserValid
   }
 

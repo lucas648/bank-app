@@ -1,0 +1,12 @@
+.carroussel{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  &__button{
+    border-radius: 50%;
+    border: none;
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
+  }
+}

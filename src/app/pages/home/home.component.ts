@@ -23,11 +23,10 @@ export class HomeComponent implements OnInit {
   }
 
   mostrarSaldo(){
-    this.balanceInputType === 'password' ? this.balanceInputType = 'text' : null;
+    this.balanceInputType === 'password' ? this.balanceInputType = 'text' : this.balanceInputType = 'password';
   }
 
-  navigateTo(recievedRoute: string){-
-    3
+  navigateTo(recievedRoute: string){
     this.route.navigate([recievedRoute])
   }
 }

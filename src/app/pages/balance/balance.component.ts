@@ -1,5 +1,5 @@
 import { balance } from './../../interfaces/componentsInterfaces';
-import { userBalance } from './../../mocks/components-mocks';
+import { userBalance, userData } from './../../mocks/components-mocks';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +7,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './balance.component.html',
   styleUrls: ['./balance.component.scss']
 })
-export class BalanceComponent implements OnInit {
+export class BalanceComponent {
 
   extractItems: balance[] = userBalance;
+  user = userData
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

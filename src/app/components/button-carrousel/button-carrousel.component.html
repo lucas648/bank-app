@@ -1,18 +1,23 @@
-<div *ngFor="let item of items">
-  <button click="eventEmiter(item)">
-    <img 
-      *ngIf="item.source" 
-      id="buttonImage" 
-      src="item.source"
-    />
-    <p id="buttonText" >
-      {{item.innerText}}
+<div class="carroussel">
+  <div *ngFor="let item of items">
+    <button
+      class="carroussel__button"
+      click="eventEmiter(item)">
+      <img 
+        *ngIf="item.source" 
+        id="buttonImage" 
+        src="item.source"
+      />
+      <p id="buttonText" >
+        {{item.innerText}}
+      </p>
+    </button>
+    <p 
+      *ngIf="item.title" 
+      id="buttonTitle"
+    >
+      {{item.title}}
     </p>
-  </button>
-  <p 
-    *ngIf="item.title" 
-    id="buttonTitle"
-  >
-    {{item.title}}
-  </p>
+  </div>
 </div>
+

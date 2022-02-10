@@ -36,7 +36,9 @@ export class LoginComponent implements OnInit {
   doLogin(){
     const loginData = this.verificarCampos();
     
-    return this.auth.authanticate(loginData);
+    if(this.auth.authanticate(loginData)){
+      this.route.navigate(['home'])
+    }
   }
 
   verificarCampos(){

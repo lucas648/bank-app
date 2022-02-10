@@ -1,28 +1,32 @@
-<div>
+<div class="login">
   <h1>Bem Vindo!!!</h1>
   <p>faça seu Login</p>
   <form   
     id="formLogin" 
     [formGroup]="formLogin"
     (ngSubmit)="doLogin()">
-    <div>
+    <div class="login__item">
      <label>Login</label>
      <input 
        id="login" 
+       class="login__input"
        formControlName="login" 
        placeholder="Login"
      />
     </div>
     <div>
-      <label>Password</label>
+      <label>Senha</label>
       <input 
         id="password" 
+        class="login__input"
         formControlName="password" 
-        placeholder="Password"
+        placeholder="Senha"
       />
     </div>
-    <app-button type="submit" buttonText="Entrar"></app-button>
-    <app-button (click)="trocarSenha()" buttonText="Esqueci Minha Senha"></app-button>
+    <div class="login__actions">
+      <app-button type="submit" buttonText="Entrar"></app-button>
+      <app-button (click)="trocarSenha()" buttonText="Esqueci Minha Senha"></app-button>
+    </div>
   </form>
 </div>
 
