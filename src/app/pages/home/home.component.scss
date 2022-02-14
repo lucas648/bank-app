@@ -5,4 +5,12 @@
   &__saldo{
     border: none;
   }
+  &__button-saldo{
+    border: none;
+    background: none;
+    text-decoration: underline;
+  }
+  &__paragraf{
+    display: contents;
+  }
 }
