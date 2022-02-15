@@ -2,7 +2,7 @@
   <div *ngFor="let item of items">
     <button
       class="carroussel__button"
-      click="eventEmiter(item)">
+      (click)="eventEmiter(item)">
       <img 
         *ngIf="item.source" 
         id="buttonImage" 

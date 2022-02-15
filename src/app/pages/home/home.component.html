@@ -18,6 +18,7 @@
     <div>
       <button-carrousel
         [items]="buttonCarrouselItem"
+        (buttonEmitter)="navigateTo($event)"
       ></button-carrousel>
       <go-to
         [items]="goToItem"

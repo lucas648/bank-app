@@ -17,6 +17,6 @@ export class ButtonCarrouselComponent implements OnInit {
   }
 
   eventEmiter(item: ButtonItem){
-    this.buttonEmitter.emit(item)
+    this.buttonEmitter.emit(item.route)
   }
 }

@@ -1,0 +1,29 @@
+.extrato{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__titulo{
+    font-family: sans-serif;
+    font-size: 22px;
+    padding: 16px;
+    font-weight: bold;
+  }
+  &__saldo{
+    display: flex;
+  }
+  &__item{
+    display: flex;
+    border: 1px solid;
+    flex-direction: column;
+    min-width: 370px;
+  }
+  &__subitem{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+p{
+ margin: 0;
+ padding: 16px;
+}

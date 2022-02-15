@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   navigateTo(recievedRoute: string){
+    console.log(recievedRoute)
     this.route.navigate([recievedRoute])
   }
 }

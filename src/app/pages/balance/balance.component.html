@@ -1,14 +1,21 @@
-<div>
-  <div>
+<div class="extrato">
+  <div class="extrato__titulo">
     Meu Extrato!!
   </div>
-  <div>
+  <div class="extrato__saldo">
     <p>Saldo:</p>
-    <p>{{user.balance}}</p>
+    <p>R$ {{user.balance}}</p>
   </div>
-  <div *ngFor="let item of extractItems">
-    <p>{{item.value}}</p>
-    <p>{{item.type}}</p>
-    <p>{{item.date}</p>
+  <div class="extrato__item" *ngFor="let item of extractItems">
+    <div class="extrato__subitem">
+      <p>Valor: </p>
+      <p>tipo: </p>
+      <p>data: </p>
+    </div>
+    <div class="extrato__subitem">
+      <p>{{item.value}}</p>
+      <p>{{item.type}}</p>
+      <p>{{item.date}}</p>
+    </div>
   </div>
 </div>
