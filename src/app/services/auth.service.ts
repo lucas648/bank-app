@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { Injectable } from '@angular/core';
 import { login } from '../interfaces/componentsInterfaces';
 
@@ -6,19 +7,20 @@ import { login } from '../interfaces/componentsInterfaces';
 })
 export class AuthService {
 
-  isUserValid : boolean = false
+  isAuthenticated : boolean = false;
 
-  constructor() { }
+  constructor(
+    private login: LoginService
+  ) { }
 
   authanticate(loginData: login): boolean{
-    loginData.login === 'LucasCosta' && loginData.password === 'Luc@sCosta' ? this.isUserValid = true : this.isUserValid = false;
-
-    return this.isUserValid
+    this.isAuthenticated = this.login.doLogin(loginData);
+    return this.isAuthenticated
   }
 
   
   userAuthenticated(){
-    return this.isUserValid;
+    return this.isAuthenticated
   }
 
 }

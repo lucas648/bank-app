@@ -1,4 +1,5 @@
-import { balance } from './../../interfaces/componentsInterfaces';
+import { UserService } from './../../services/user.service';
+import { UserBalance } from './../../interfaces/componentsInterfaces';
 import { userBalance, userData } from './../../mocks/components-mocks';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BalanceComponent {
 
-  extractItems: balance[] = userBalance;
+  extractItems: any;
   user = userData
 
-  constructor() { }
+  constructor(
+    private userServ: UserService
+  ) { }
 
+  getBalance(){
+    this.userServ.getUserbalance('').subscribe(retorno=>{
+      this.extractItems = retorno
+    })
+  }
 }

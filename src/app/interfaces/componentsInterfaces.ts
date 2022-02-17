@@ -16,8 +16,17 @@ export interface login {
   password: string;
 }
 
-export interface balance {
-  value: string;
-  type: string;
-  date: string
+export interface UserBalance {
+  userCPF: string;
+  balance:{
+    value: string;
+    type: string;
+    date: string
+  }[]
+}
+
+export interface UserData {
+  name: string;
+  firstName: string;
+  balance: string
 }

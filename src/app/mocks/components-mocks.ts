@@ -57,7 +57,9 @@ export const userData = {
   balance: '15000'
 }
 
-export const userBalance = [
+export const userBalance ={
+  userCPF: '',
+  balance: [
   {
     value: 'R$ 15,00',
     type: 'Transporte',
@@ -93,4 +95,4 @@ export const userBalance = [
     type: 'Transferência PIX',
     date: '03/02/2022'
   },
-]
+]}
