@@ -29,4 +29,5 @@ export interface UserData {
   name: string;
   firstName: string;
   balance: string
+  cpf: string
 }

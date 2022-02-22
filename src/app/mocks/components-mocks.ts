@@ -54,7 +54,8 @@ export const carrousselButtonContent : ButtonItem [] = [
 export const userData = {
   name: 'Eduardo Baptista da Silva',
   firstName: 'Eduardo',
-  balance: '15000'
+  balance: '15000',
+  cpf: '44422050879'
 }
 
 export const userBalance ={
